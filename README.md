@@ -7,7 +7,7 @@ Qt4 App - Sliding Window
 
 Purpose
 -------
-To show Qt4 flick effect:  
+To show Qt4 flick effect (here using Qt SDK v4.6.2):  
 ######_Qt4 App - Sliding Window document_######
 <http://www.slideshare.net/wiliwe/>  
 
