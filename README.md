@@ -9,7 +9,7 @@ Purpose
 -------
 To show Qt4 flick effect (here using Qt SDK v4.6.2):  
 ######_Qt4 App - Sliding Window document_######
-<http://www.slideshare.net/wiliwe/>  
+<http://www.slideshare.net/wiliwe/qt4-app-sliding-window>  
 
 Folders
 -------
