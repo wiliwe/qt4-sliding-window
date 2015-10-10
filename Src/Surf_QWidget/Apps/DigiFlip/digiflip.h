@@ -48,6 +48,14 @@
 
 #include <QtGui>
 
+// Changed for Qt5, 2015-09-10. Begin
+#include <QtGlobal>
+
+#if QT_VERSION >= 0x050000
+#include <QtWidgets>  
+#endif
+// Changed for Qt5, 2015-09-10. End
+
 class Digits: public QWidget
 {
     Q_OBJECT

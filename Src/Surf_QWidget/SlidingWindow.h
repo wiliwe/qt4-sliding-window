@@ -1,3 +1,14 @@
+/*! \file  SlidingWindow.h
+    \brief Declaration of SlidingWindow class.
+
+    \author  William.L
+    \date    2010-06-28
+    \version 1.0
+
+    \b Change History
+    \n 1) 2010-06-28 William.L initialized.
+ */
+
 #ifndef SLIDINGPANELCUST_H
 #define SLIDINGPANELCUST_H
 

@@ -1,3 +1,13 @@
+/*! \file  SlidingWindow.cpp
+    \brief Implementation of SlidingWindow class.
+
+    \author  William.L
+    \date    2010-06-28
+    \version 1.0
+
+    \b Change History
+    \n 1) 2010-06-28 William.L initialized.
+ */
 
 #include "SlidingWindow.h"
 

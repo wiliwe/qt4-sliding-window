@@ -13,6 +13,7 @@
 #include <QStringList>
 #include <QPixmap>
 #include <QDebug>
+#include <QtGlobal>  // Add for Qt5, 2015-09-10.
 
 #include "SlidingWindow.h"
 
@@ -161,12 +162,24 @@ void SlidingWindow::addImages()
     /* To examinate if the image folder is existent. */
     if(imgDir.exists() == false)
     {
+       /* Changed for Qt5, 2015-09-10 */
+       #if QT_VERSION < 0x050000
        qDebug("%s - %s(%d) : %s does not exist!!!",
-               __FILE__, __FUNCTION__, __LINE__, m_imageDir.toAscii().data());
+              __FILE__, __FUNCTION__, __LINE__, m_imageDir.toAscii().data() );
+       #else
+       qDebug("%s - %s(%d) : %s does not exist!!!",
+              __FILE__, __FUNCTION__, __LINE__, m_imageDir.toStdString().c_str() );
+       #endif
+
        return;
     }
     else
-       qDebug("Current image directory name = %s", imgDir.dirName().toAscii().data());
+      /* Changed for Qt5, 2015-09-10 */
+      #if QT_VERSION < 0x050000
+      qDebug("Current image directory name = %s", imgDir.dirName().toAscii().data());
+      #else
+      qDebug("Current image directory name = %s", imgDir.dirName().toStdString().c_str());
+      #endif
 
     /* Sort contents under the directory by File Name. */
     imgDir.setSorting(QDir::Name);
@@ -193,7 +206,12 @@ void SlidingWindow::addImages()
     for(int i = 0; i < imgFileList.count(); i++)
     {
         /* Create a Pixmap*/
+        /* Changed for Qt5, 2015-09-10 */
+        #if QT_VERSION < 0x050000
         QPixmap pixmap( QString("%1/%2").arg(m_imageDir).arg(((QString)imgFileList.at(i)).toAscii().data()) ) ; /* 1st, 2nd argement assignment to form a string. */
+        #else
+        QPixmap pixmap( QString("%1/%2").arg(m_imageDir).arg(((QString)imgFileList.at(i)).toStdString().c_str()) ) ; /* 1st, 2nd argement assignment to form a string. */
+        #endif
 
         /* Declare a QGraphicsPixmapItem pointer */
         QGraphicsPixmapItem *imageItem = NULL;

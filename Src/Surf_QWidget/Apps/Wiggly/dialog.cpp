@@ -41,6 +41,15 @@
 
 #include <QtGui>
 
+// Added for Qt5, 2015-09-10. Begin
+#include <QtGlobal>
+
+#if QT_VERSION >= 0x050000
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QVBoxLayout>
+#endif
+// Added for Qt5, 2015-09-10. End
+
 #include "dialog.h"
 #include "wigglywidget.h"
 

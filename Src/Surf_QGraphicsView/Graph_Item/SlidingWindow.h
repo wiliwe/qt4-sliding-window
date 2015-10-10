@@ -13,7 +13,17 @@
 #define SLIDINGWINDOW_H
 
 #include <QtGui>
+
+// Changed for Qt5, 2015-09-10. Begin
+#include <QtGlobal>
+
+#if QT_VERSION >= 0x050000
+#include <QtWidgets/QGraphicsPixmapItem>
+#include <QtWidgets/QGraphicsView>
+#else
 #include <QGraphicsPixmapItem>
+#endif
+// Changed for Qt5, 2015-09-10. End
 
 #include "ui_SlidingWindowControl.h"
 #include "flickcharm.h"

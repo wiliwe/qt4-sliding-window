@@ -47,6 +47,13 @@
 #define DIGIFLIP_H
 
 #include <QtGui>
+// Added for Qt5, 2015-09-10. Begin
+#include <QtGlobal>
+
+#if QT_VERSION >= 0x050000
+#include <QtWidgets>
+#endif
+// Added for Qt5, 2015-09-10. End
 
 /*! \class Digits
     \brief The class of digit number.

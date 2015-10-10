@@ -18,3 +18,6 @@ DEFINES += ADD_PAGE_NUM
 #DEFINES += USE_CONTROL_PANEL
 
 QT += gui
+# Added for Qt5, 2015-09-10. Begin
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+# Added for Qt5, 2015-09-10. End

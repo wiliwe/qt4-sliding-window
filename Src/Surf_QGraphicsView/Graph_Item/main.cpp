@@ -9,6 +9,8 @@
     \n 1) 2010-06-28 William.L initialized.
  */
 
+
+#include <QtGlobal>  // Added for Qt5, 2015-09-10.
 #include <QApplication>
 
 #include "SlidingWindow.h"
@@ -19,9 +21,16 @@
 
 int main(int argc, char *argv[])
 {
+    /* Changed for Qt5, 2015-09-10
+     * QApplication::setGraphicsSystem() is removed, because the introduction of QPA made it redundant.
+     * -----------
+     * QPA: Qt Platform Abstraction , http://doc.qt.io/qt-5/qpa.html
+     */
+    #if QT_VERSION < 0x050000
     /* Sets the default graphics backend to system, which will be used for on-screen widgets and QPixmaps.
        This function must be called before the QApplication constructor is called. */
     QApplication::setGraphicsSystem("raster");
+    #endif
 
     /* Create a QApplication object and set relavant information. */
     QApplication app(argc, argv);
